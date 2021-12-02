@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 
 def tirar_print_e_salvar(driver, nome):
-    #datahora = datetime.now().strftime('%Y-%m-%d-%H-%M')
+    # datahora = datetime.now().strftime('%Y-%m-%d-%H-%M')
     datahora = datetime.now().strftime('%Y-%m-%d')
     Path(f'../prints/{datahora}').mkdir(parents=True, exist_ok=True)
     driver.save_screenshot(f'../prints/{datahora}/{nome}.png')
