@@ -44,6 +44,11 @@ def seleciono_o_primeiro_voo(context):
 
 @when(u'preencho os dados de pagamento como "{cartao}", "{titular}", "{validade}", "{cvv}"')
 def preencho_os_dados_de_pagamento_como(context, cartao, titular, validade, cvv):
+    cartoes = [row["cartao"] for row in context.table]
+    titulares = [row["titular"] for row in context.table]
+    validades = [row["validade"] for row in context.table]
+    cvvs = [row["cvv"] for row in context.table]
+
     context.driver.find_element(By.ID, 'inputName').send_keys('Fernando Vitor Moreira')
     context.driver.find_element(By.ID, 'address').send_keys('Iterasys')
     context.driver.find_element(By.ID, 'city').send_keys('São Paulo')
@@ -51,9 +56,7 @@ def preencho_os_dados_de_pagamento_como(context, cartao, titular, validade, cvv)
     context.driver.find_element(By.ID, 'zipCode').send_keys('012134-111')
     context.driver.find_element(By.CSS_SELECTOR, 'input.btn-primary').click()
 
-    cartoes = [row["cartao"] for row in context.table]
-    print('Passo 4 - Preencheu os dados de pagamento como '
-          f'{cartoes}, {titular}, {validade}, {cvv}')
+    print(f'Passo 4 - Preencheu os dados de pagamento como {cartoes}, {titulares}, {validades}, {cvvs}')
 
 
 @then(u'valido se a passagem foi emitida')
