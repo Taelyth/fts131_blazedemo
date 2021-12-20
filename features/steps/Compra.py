@@ -33,6 +33,10 @@ def pesquiso_passagens_de_origem_destino(context, origem, destino):
 
     # Clicar no botão de pesquisar voos
     context.driver.find_element(By.CSS_SELECTOR, 'input.btn-primary').click()
+
+    # Checar se a busca está correta
+    re = f'Flights from {origem} to {destino}:'
+    assert context.driver.find_element(By.CSS_SELECTOR, 'h3').text == re
     print(f'Passo 2 - Pesquisou por passagem de {origem} a {destino}')
 
 
