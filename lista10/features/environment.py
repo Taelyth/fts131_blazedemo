@@ -11,8 +11,3 @@ def before_all(context):
 # Bloco executado no final de tudo - Ultimo a rodar
 def after_all(context):
     context.driver.quit()
-
-
-# Bloco executado ao final de cada step
-def after_step(context, step):
-    pass
