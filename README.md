@@ -30,6 +30,8 @@ pytest
 
 `features/steps` Código do passo a passo do BDD, utilizando Selenium.
 
+`features/steps/Evidencias.py` Código para tirar uma screenshot de evidência durante o teste.
+
 `helpers` Diretório não utilizado, pode ser ignorado.
 
 `lista10` Exercício para treinar o BDD com a função de Cadastro do mesmo site.
